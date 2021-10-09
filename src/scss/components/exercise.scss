@@ -1,0 +1,21 @@
+.exercise {
+  // @include block-rounded;
+  // max-width: $container-width-small;
+  margin: 0 auto;
+  text-align: center;
+
+  &__name {
+    @include font-h3;
+  }
+
+  &__pattern {
+    color: $color-gray;
+    margin-bottom: $column-margin;
+  }
+  &__description {
+    margin-bottom: $margin-2;
+  }
+  &__buttons {
+    text-align: center;
+  }
+}

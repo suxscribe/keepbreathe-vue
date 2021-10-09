@@ -1,0 +1,38 @@
+.exercises {
+  margin-bottom: $block-margin;
+
+  &__list {
+    // display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: $grid-gap;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include block-rounded;
+    cursor: pointer;
+
+    // grid-row-start: 1;
+    // grid-row-end: 2;
+
+    text-align: center;
+    transition: all var(--transition);
+
+    &:hover {
+      background-color: $color-gray-2;
+      box-shadow: 0 10px 30px rgba($color-inhale, 0.3);
+    }
+
+    &-name {
+      @include font-h3;
+    }
+
+    &-pattern {
+      color: $color-gray;
+    }
+  }
+}
