@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open-app-name firefox --config ./webpack.dev.conf.js",
+    "dev": "webpack-dev-server --history-api-fallback --open-app-name firefox --config ./webpack.dev.conf.js",
     "build": "webpack --config ./webpack.build.conf.js"
   },
   "browserslist": [
@@ -43,6 +43,7 @@
     "pug-plain-loader": "^1.1.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",
+    "svg-sprite-loader": "^6.0.9",
     "vue-loader": "^15.9.8",
     "vue-style-loader": "^4.1.3",
     "vue-template-compiler": "^2.6.14",

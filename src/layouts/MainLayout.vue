@@ -1,31 +1,19 @@
-<template lang='pug'>
+<template lang="pug">
   .page
     router-view
 </template>
 
 <script>
-
 export default {
   name: 'main-layout',
   data: () => {
-    return {
-
-    }
+    return {};
   },
-  async mounted() {
-
-  },
-  computed: {
-
-  },
-  watch: {
-
-  },
-  components: {
-
-  }
-}
+  async mounted() {},
+  computed: {},
+  watch: {},
+  components: {},
+};
 </script>
 
-<style>
-</style>
+<style></style>

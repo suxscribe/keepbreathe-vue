@@ -4,6 +4,13 @@ import 'regenerator-runtime/runtime';
 import './js/';
 import { vars } from './js/vars';
 
+// some svg magic. SVG to shadow root
+function requireAll(r) {
+  r.keys().forEach(r);
+  console.log(r);
+}
+requireAll(require.context('/src/svg/', true, /\.svg$/));
+
 // SCSS
 import './scss/main.scss';
 

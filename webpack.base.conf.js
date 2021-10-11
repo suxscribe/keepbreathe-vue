@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
@@ -77,20 +78,7 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-        },
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-        },
-      },
+
       {
         test: /\.scss$/,
         use: [
@@ -169,6 +157,7 @@ module.exports = {
         { from: `${PATHS.src}/static`, to: '' },
       ],
     }),
+    new SpriteLoaderPlugin({ plainSprite: true }),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
@@ -182,3 +171,19 @@ module.exports = {
     ),
   ],
 };
+
+// removed. was preventing svg sprites from working
+// {
+//   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+//   loader: 'file-loader',
+//   options: {
+//     name: '[name].[ext]',
+//   },
+// },
+// {
+//   test: /\.(png|jpg|gif|svg)$/,
+//   loader: 'file-loader',
+//   options: {
+//     name: '[name].[ext]',
+//   },
+// },

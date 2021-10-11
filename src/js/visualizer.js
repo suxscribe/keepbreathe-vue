@@ -1,6 +1,5 @@
 import gsap from 'gsap';
 import { vars } from './vars';
-// import { BreathContainer } from './breath-container'; // not used anymore. made with BreathGraphContainer.vue
 
 export class Visualizer {
   constructor(_options) {
@@ -22,14 +21,32 @@ export class Visualizer {
     this.exhaleTime = _options.breathPattern[2];
     this.hold2Time = _options.breathPattern[3];
 
-    this.blockWrapEl = document.querySelector('.breath__wrap');
+    this.counter = 0;
+    this.startTime = new Date();
+    this.elapsedTime = 0;
+    this.timeInterval = null;
+
     this.ballElement = document.querySelector(vars.ball);
+    this.blockWrapEl = document.querySelector(vars.blocksWrap);
+
+    this.timerElement = document.querySelector('.breath__timer');
+    this.counterElement = document.querySelector('.breath__counter-count');
 
     this.timelineBlocks = new gsap.timeline({ repeat: -1 });
     this.timelineBall = new gsap.timeline({ repeat: -1 });
 
-    this.setBallAnimation();
-    this.setBreathAnimation(); //start animation
+    if (
+      this.breathTextInhaleElement &&
+      this.breathTextHold1Element &&
+      this.breathTextExhaleElement &&
+      this.breathTextHold2Element &&
+      this.ballElement
+    ) {
+      this.setBallAnimation();
+    }
+    if (this.blockWrapEl) this.setBreathAnimation(); //start animation
+
+    this.updateTime();
   }
 
   setBallAnimation() {
@@ -78,6 +95,8 @@ export class Visualizer {
       },
       onComplete: () => {
         this.removeBreathTextClasses();
+        this.increaseCounter();
+        this.updateCounter();
       },
     });
   }
@@ -92,6 +111,24 @@ export class Visualizer {
       ease: 'linear',
       x: breathBlockWidth * -1,
     });
+  }
+
+  getElapsedTime() {
+    const now = new Date();
+    const timeDiff = now - this.startTime;
+    this.elapsedTime = new Date(timeDiff);
+
+    this.timerElement.innerHTML = this.elapsedTime.toISOString().substr(14, 5);
+  }
+  updateTime() {
+    this.timeInterval = setInterval(this.getElapsedTime.bind(this), 1000);
+  }
+
+  increaseCounter() {
+    this.counter += 1;
+  }
+  updateCounter() {
+    this.counterElement.innerHTML = this.counter;
   }
 
   removeBreathTextClasses() {
@@ -112,10 +149,7 @@ export class Visualizer {
     this.blockWrapEl.style = '';
     this.ballElement.style = '';
 
-    // this.blockContainer1.destroy();
-    // this.blockContainer2.destroy();
-    // this.blockContainer3.destroy();
-    // this.blockContainer4.destroy();
+    clearInterval(this.timeInterval);
 
     this.removeBreathTextClasses();
   }

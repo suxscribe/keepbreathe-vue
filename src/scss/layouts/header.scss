@@ -1,3 +1,17 @@
 .header {
-  
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__right {
+    flex: 1 1 auto;
+  }
+
+  &__left {
+    flex: 0 0 auto;
+    padding: $block-padding;
+  }
 }

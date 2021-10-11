@@ -1,0 +1,32 @@
+.modal {
+  &__container {
+  }
+
+  &__close {
+    position: absolute;
+    box-sizing: border-box;
+    right: responsive-value(12px, 24px);
+    top: responsive-value(12px, 24px);
+
+    width: responsive-value(32px, 48px);
+    height: responsive-value(32px, 48px);
+
+    padding: responsive-value(4px, 8px);
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      & svg {
+        opacity: 0.5;
+      }
+    }
+
+    & svg {
+      fill: $color-black;
+      opacity: 0.3;
+      transition: opacity var(--transition);
+    }
+  }
+}

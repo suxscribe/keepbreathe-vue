@@ -18,37 +18,39 @@
         BreathGraphContainer
         BreathGraphContainer
         BreathGraphContainer
+    .breath__timer 00:00
+    .breath__counter 
+      | Cycle 
+      span.breath__counter-count 0
 </template>
 
 <script>
 import { Visualizer } from '../js/visualizer';
-import {breathData} from '../js/breath-data';
+import { breathData } from '../js/breath-data';
 
-import BreathGraphContainer from './BreathGraphContainer.vue'
+import BreathGraphContainer from './BreathGraphContainer.vue';
 
 // console.log(BreathContainer)
 
-
 export default {
-  data () {
+  data() {
     return {
       breathDataLocal: breathData,
       breathVisuals: null,
-    }
+    };
   },
-  mounted () {
-    this.startBreathVisuals()
+  mounted() {
+    this.startBreathVisuals();
   },
   methods: {
     getBreath() {
-      return this.$store.getters.getBreath
+      return this.$store.getters.getBreath;
     },
     stopBreathVisuals() {
       if (this.breathVisuals !== null) {
-        this.breathVisuals.destroy()
-        this.breathVisuals = null
-        console.log(this.breathVisuals)
-        
+        this.breathVisuals.destroy();
+        this.breathVisuals = null;
+        console.log(this.breathVisuals);
       }
     },
     startBreathVisuals() {
@@ -58,13 +60,13 @@ export default {
       });
     },
   },
+  beforeDestroy() {
+    this.stopBreathVisuals();
+  },
   components: {
-    BreathGraphContainer
-  }
-}
-
+    BreathGraphContainer,
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

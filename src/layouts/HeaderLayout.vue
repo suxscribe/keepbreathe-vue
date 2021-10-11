@@ -1,34 +1,24 @@
-<template lang='pug'>
+<template lang="pug">
   .page
     Header
     router-view
 </template>
 
 <script>
-import Header from '../components/app/Header.vue'
-
+import Header from '../components/app/Header.vue';
 
 export default {
   name: 'header-layout',
   data: () => {
-    return {
-
-    }
+    return {};
   },
-  async mounted() {
-
-  },
-  computed: {
-
-  },
-  watch: {
-
-  },
+  async mounted() {},
+  computed: {},
+  watch: {},
   components: {
-    Header
-  }
-}
+    Header,
+  },
+};
 </script>
 
-<style>
-</style>
+<style></style>

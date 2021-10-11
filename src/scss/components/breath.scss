@@ -77,6 +77,7 @@
     position: relative;
     // overflow: hidden;
     width: 100vw;
+    margin-bottom: $margin-3;
 
     &:before {
       content: '';
@@ -136,6 +137,13 @@
     border-radius: 50%;
     background-color: $color-green;
     z-index: 2;
+  }
+
+  &__timer {
+    text-align: center;
+  }
+  &__counter {
+    text-align: center;
   }
 }
 

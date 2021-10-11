@@ -1,29 +1,21 @@
 <template lang="pug">
   .header
-    router-link(:to={path: "/"}, class='header__goback') Home
+    .header__right
+    .header__left
+      router-link(:to={path: "/"}, class='header__goback') Finish
 </template>
 
 <script>
-
 // console.log(BreathContainer)
 
-
 export default {
-  data () {
-    return {
-    }
+  data() {
+    return {};
   },
-  mounted () {
-  },
-  methods: {
-    
-  },
-  components: {
-  }
-}
-
+  mounted() {},
+  methods: {},
+  components: {},
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
