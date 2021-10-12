@@ -3,7 +3,8 @@
   $mobile-base-size: 2.7 * $base-font-size;
 
   font-size: $mobile-base-size;
-  line-height: 1.2;
+  font-weight: $font-weight-bold;
+  line-height: 1.3;
   letter-spacing: -0.01em;
 
   @media (min-width: $breakpoint-small) {
@@ -24,6 +25,7 @@
   $mobile-base-size: 2.2 * $base-font-size;
 
   font-size: $mobile-base-size;
+  font-weight: $font-weight-bold;
   line-height: 1.15;
   letter-spacing: -0.01em;
 
@@ -44,6 +46,7 @@
   $tablet-base-size: $fhd-base-size * 0.7;
 
   font-size: 2rem;
+  font-weight: $font-weight-bold;
   line-height: 1.48;
   letter-spacing: 0.01em;
 
@@ -64,7 +67,7 @@
 
   font-size: 1.7rem;
   line-height: 1.48;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
   letter-spacing: 0.01em;
 
   @media (min-width: $breakpoint-small) {
@@ -83,8 +86,8 @@
   $mobile-base-size: 1.7 * $base-font-size;
 
   font-size: $mobile-base-size;
-  line-height: 1.4;
-  font-weight: 400;
+  line-height: 1.5;
+  font-weight: $font-weight-normal;
   letter-spacing: 0em;
 
   @media (min-width: $breakpoint-small) {
@@ -122,7 +125,7 @@
   $fhd-base-size: 1.6 * $base-font-size;
   $tablet-base-size: $fhd-base-size * 0.8;
 
-  font-size: 1.6rem;
+  font-size: $base-font-size;
   line-height: 1.5;
   font-weight: 400;
   letter-spacing: -0.01;

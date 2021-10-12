@@ -1,14 +1,17 @@
 <template lang="pug">
   .container
     include ../pug/utils/mixins.pug
-    
+    .exercises__header
+      .exercises__header-logo
+        img(src='/assets/img/logo.svg')
     .exercises 
       .exercises__list 
         .exercises__item(v-for="breath in breathDataLocal", :data-breath-id="breath.id" @click="selectBreath(breath.id)")
           .exercises__item-name {{breath.name}}
           .exercises__item-pattern {{renderPattern(breath.breathPattern)}}
+      div {{ 0 | localizeData('name') }}
 
-    modal(name='breath-modal', classes='modal__container', height='auto', :shiftX=0, :shiftY=0)
+    modal(name='breath-modal', classes='modal__container', height='auto')
       button.modal__close(@click='modalHide')
         +svg({name: 'close'})
       .exercise 
@@ -16,7 +19,7 @@
         .exercise__pattern {{renderPattern(breathDataLocal[selectedBreathId].breathPattern)}}
         .exercise__description {{breathDataLocal[selectedBreathId].description}} 
         .exercise__buttons
-          .button.button--primary(@click='goToBreathe') Start
+          .button.button--primary(@click='goToBreathe') {{ 'StartButtonText' | localize }}
 </template>
 
 <script>
@@ -44,7 +47,7 @@ export default {
     },
     selectBreath(id) {
       this.selectedBreathId = id;
-      console.log(this.selectedBreathId);
+      // console.log(this.selectedBreathId);
       this.stopBreathVisuals();
       this.setBreath();
       this.modalShow();

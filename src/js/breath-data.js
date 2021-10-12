@@ -5,6 +5,18 @@ export const breathData = [
     breathPattern: [7, 4, 8, 4],
     description:
       'Pranayama is the formal practice of controlling the breath, which is the source of our prana, or vital life force',
+    en: {
+      name: 'Pranayama',
+      breathPattern: [7, 4, 8, 4],
+      description:
+        'Pranayama is the formal practice of controlling the breath, which is the source of our prana, or vital life force',
+    },
+    ru: {
+      name: 'Пранаяма',
+      breathPattern: [7, 4, 8, 4],
+      description:
+        'Пранаяма — практика контроля дыхания, которое рассматривается как источник праны, или жизненной силы',
+    },
   },
   {
     id: 1,
@@ -39,5 +51,12 @@ export const breathData = [
     breathPattern: [7, 0, 7, 0],
     description:
       'Ujjayi has a balancing influence on the entire cadiorespiratory system, releases feelings of irritation and frustration, and helps calm the mind and body',
+  },
+  {
+    id: 6,
+    name: '7/11 Breathing',
+    breathPattern: [7, 0, 11, 0],
+    description:
+      'Relaxing and helps gain composure/ access rational thinking parts of the brain. Сядьте поудобнее на подушке или на стуле, расслабив плечи и аккуратно сложив руки на животе.  Если возможно, вдохните и выдохните через нос. Вдохните на счет 7 секунд и выдохните на счет 11 секунд. Здесь самое главное - выдыхать дольше, чем вдыхать. Если вы делаете это правильно, ваши плечи останутся неподвижными, а живот будет становиться все больше и меньше по мере того, как вы дышите. Если вы сядете перед зеркалом, то сможете следить за своими плечами и животом. Как только вы сможете без усилий удерживать плечи неподвижными и расслабленными, неплохо будет закрыть глаза и попытаться представить себе числа, которые помогут вам полностью сосредоточиться на дыхании. ',
   },
 ];

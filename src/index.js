@@ -4,13 +4,6 @@ import 'regenerator-runtime/runtime';
 import './js/';
 import { vars } from './js/vars';
 
-// some svg magic. SVG to shadow root
-function requireAll(r) {
-  r.keys().forEach(r);
-  console.log(r);
-}
-requireAll(require.context('/src/svg/', true, /\.svg$/));
-
 // SCSS
 import './scss/main.scss';
 
@@ -21,6 +14,7 @@ import Vue from 'vue';
 import store from './store/index';
 import router from './router/index';
 import VModal from 'vue-js-modal/dist/index.nocss.js';
+import localizeFilter from './filters/localize.filter';
 
 Vue.use(VModal);
 
@@ -31,7 +25,7 @@ Vue.component(
 );
 Vue.component('breath-component', require('./components/Breath.vue').default);
 Vue.component('app', require('./components/App.vue').default);
-
+Vue.filter('localize', localizeFilter);
 // Vue init
 const app = new Vue({
   el: '#app',
@@ -40,3 +34,10 @@ const app = new Vue({
 });
 
 // console.log(vars);
+
+// some svg magic. SVG to shadow root
+function requireAll(r) {
+  r.keys().forEach(r);
+  console.log(r);
+}
+requireAll(require.context('/src/svg/', true, /\.svg$/));

@@ -2,7 +2,7 @@
   .header
     .header__right
     .header__left
-      router-link(:to={path: "/"}, class='header__goback') Finish
+      router-link(:to={path: "/"}, class='header__goback') {{ 'FinishText' | localize }}
 </template>
 
 <script>

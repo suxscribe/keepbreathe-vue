@@ -6,11 +6,12 @@
 
   &__name {
     @include font-h3;
+    margin-bottom: $margin;
   }
 
   &__pattern {
     color: $color-gray;
-    margin-bottom: $column-margin;
+    margin-bottom: $margin;
   }
   &__description {
     margin-bottom: $margin-2;

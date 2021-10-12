@@ -1,6 +1,8 @@
 $easing: cubic-bezier(0.77, 0, 0.175, 1);
 
-$font-family: 'Suisse Intl', sans-serif;
+$font-family: 'Jost', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 500;
 $base-font-size: 10px;
 
 // COLORS
@@ -9,13 +11,14 @@ $color-white: #fff;
 $color-inhale: #4ea2e2;
 $color-exhale: #e36966;
 
-$color-black: #434047;
+$color-black: #5b5761;
 $color-green: #95962d;
 $color-yellow: #e0e339;
 $color-dark: #266696;
 
 $color-gray: rgba(67, 64, 71, 0.4);
 $color-gray-2: #f7f7f9;
+// $color-gray-light: #93b6bb;
 
 :root {
   --box-shadow: 0 10px 30px #{rgba($color-gray, 0.2)};

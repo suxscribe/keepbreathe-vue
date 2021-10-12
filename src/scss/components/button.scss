@@ -9,6 +9,7 @@
   line-height: $button-s-height;
   padding: 0 responsive-value(24px, 48px);
   letter-spacing: 0.1em;
+  font-weight: $font-weight-bold;
 
   @media (min-width: $breakpoint-small) {
   }

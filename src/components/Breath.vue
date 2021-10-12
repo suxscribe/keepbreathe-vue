@@ -1,10 +1,11 @@
 <template lang="pug">
   .breath__practice
     .breath__text
-      .breath__text-item.breath__text-item--inhale Inhale
-      .breath__text-item.breath__text-item--hold1 Hold
-      .breath__text-item.breath__text-item--exhale Exhale
-      .breath__text-item.breath__text-item--hold2 Hold
+      .breath__countdown.active 3
+      .breath__text-item.breath__text-item--inhale {{ 'InhaleText' | localize }}
+      .breath__text-item.breath__text-item--hold1 {{ 'HoldText' | localize }}
+      .breath__text-item.breath__text-item--exhale {{ 'ExhaleText' | localize }}
+      .breath__text-item.breath__text-item--hold2 {{ 'HoldText' | localize }}
     .breath__visualizer
       .breath__ball
       .breath__wrap
@@ -20,8 +21,9 @@
         BreathGraphContainer
     .breath__timer 00:00
     .breath__counter 
-      | Cycle 
+      | {{ 'CycleLabel' | localize }} 
       span.breath__counter-count 0
+    
 </template>
 
 <script>
@@ -50,7 +52,6 @@ export default {
       if (this.breathVisuals !== null) {
         this.breathVisuals.destroy();
         this.breathVisuals = null;
-        console.log(this.breathVisuals);
       }
     },
     startBreathVisuals() {

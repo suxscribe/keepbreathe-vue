@@ -33,6 +33,10 @@
     box-shadow: 0 20px 60px -2px rgba($color-gray, 0.2);
     z-index: 1000;
     margin: $container-margin;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.4s cubic-bezier(0.2, 1.39, 0.43, 0.99),
+      opacity 0.2s ease;
 
     max-width: $container-width-small;
     padding: $modal-padding;
@@ -43,24 +47,29 @@
 
   &-transition--overlay-enter-active,
   &-transition--overlay-leave-active {
-    transition: all 50ms;
+    transition: all 0.2s;
   }
   &-transition--overlay-enter,
   &-transition--overlay-leave-active {
     opacity: 0;
   }
-  &-transition--modal-enter-active,
+  &-transition--modal-enter-active {
+  }
+
   &-transition--modal-leave-active {
-    transition: all 400ms;
+    transition: transform 0.8s ease, opacity 0.2s ease;
+
+    // transition: all 0.4s;
   }
   &-transition--modal-enter,
   &-transition--modal-leave-active {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: scale(0);
+    // transform: translateY(-20px);
   }
   &-transition--default-enter-active,
   &-transition--default-leave-active {
-    transition: all 2ms;
+    transition: all 0.1s;
   }
   &-transition--default-enter,
   &-transition--default-leave-active {

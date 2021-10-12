@@ -13,6 +13,7 @@ export const vars = {
   ball: '.breath__ball',
   ballHeight: parseInt(cssVars.ballSize, 10),
   blocksHeight: parseInt(cssVars.breatheBlockHeight, 10),
+  clsActive: 'active',
 
   inhaleTime: 6,
   holdTime: 2,

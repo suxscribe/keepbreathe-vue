@@ -1,10 +1,19 @@
 .exercises {
   margin-bottom: $block-margin;
 
+  &__header {
+    margin-bottom: $margin-3;
+
+    &-logo {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
   &__list {
     // display: flex;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     gap: $grid-gap;
   }
