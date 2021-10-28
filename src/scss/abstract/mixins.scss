@@ -42,17 +42,17 @@
 }
 
 @mixin font-h3 {
-  $fhd-base-size: 3 * $base-font-size;
-  $tablet-base-size: $fhd-base-size * 0.7;
+  $fhd-base-size: 2.4 * $base-font-size;
+  $mobile-base-size: 1.8 * $base-font-size;
 
-  font-size: 2rem;
+  font-size: $mobile-base-size;
   font-weight: $font-weight-bold;
   line-height: 1.48;
   letter-spacing: 0.01em;
 
   @media (min-width: $breakpoint-small) {
     font-size: responsive-value(
-      $tablet-base-size,
+      $mobile-base-size,
       $fhd-base-size,
       $breakpoint-small,
       $fhd-width,

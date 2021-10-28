@@ -4,5 +4,8 @@
   "HoldText": "Hold",
   "ExhaleText": "Exhale",
   "CycleLabel": "Cycle",
-  "FinishText": "Finish"
+  "FinishText": "Finish",
+  "TipsHeader": "Tips",
+  "DescriptionHeader": "Description",
+  "LocaleTitle": "EN"
 }

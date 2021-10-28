@@ -4,7 +4,7 @@
 
 <script>
   import MainLayout from '../layouts/MainLayout.vue';
-  import HeaderLayout from '../layouts/HeaderLayout.vue'
+  import BreathLayout from '../layouts/BreathLayout.vue'
 
 
 export default {
@@ -13,13 +13,12 @@ export default {
       // console.log(this.$route.meta);
       // console.log(this.$route);
       // console.log(this.$route.meta.layout);
-      
       return this.$route.meta.layout + '-layout';
     }
   },
   components: {
     MainLayout,
-    HeaderLayout,
+    BreathLayout,
   }
 }
 </script>

@@ -4,5 +4,8 @@
   "HoldText": "Задержка",
   "ExhaleText": "Выдох",
   "CycleLabel": "Цикл",
-  "FinishText": "Завершить"
+  "FinishText": "Завершить",
+  "TipsHeader": "Особенности",
+  "DescriptionHeader": "Описание",
+  "LocaleTitle": "RU"
 }

@@ -154,6 +154,10 @@ module.exports = {
           from: `${PATHS.src}/${PATHS.assets}fonts`,
           to: `${PATHS.assets}fonts`,
         },
+        {
+          from: `${PATHS.src}/${PATHS.assets}sounds`,
+          to: `${PATHS.assets}sounds`,
+        },
         { from: `${PATHS.src}/static`, to: '' },
       ],
     }),

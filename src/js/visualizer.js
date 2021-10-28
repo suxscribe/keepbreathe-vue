@@ -3,6 +3,7 @@ import { vars } from './vars';
 
 export class Visualizer {
   constructor(_options) {
+    // text elements
     this.breathTextItemsElements = document.querySelectorAll(
       vars.breathTextItems
     );
@@ -16,11 +17,18 @@ export class Visualizer {
     );
     this.breathTextHold2Element = document.querySelector(vars.breathTextHold2);
 
+    // breath durations
     this.inhaleTime = _options.breathPattern[0];
     this.holdTime = _options.breathPattern[1];
     this.exhaleTime = _options.breathPattern[2];
     this.hold2Time = _options.breathPattern[3];
 
+    // audio
+    this.audio = document.createElement('audio');
+    this.audio.src = '/assets/sounds/chime.ogg';
+
+    // misc
+    this.isActive = false;
     this.counter = 0;
     this.startTime = 0;
     this.elapsedTime = 0;
@@ -28,6 +36,7 @@ export class Visualizer {
     this.startDelay = 3;
     this.startDelayRemaining = this.startDelay;
 
+    // elements
     this.ballElement = document.querySelector(vars.ball);
     this.blockWrapEl = document.querySelector(vars.blocksWrap);
 
@@ -36,6 +45,7 @@ export class Visualizer {
 
     this.countdownElement = document.querySelector('.breath__countdown');
 
+    // start
     this.countdown();
     this.countdownTimer = setInterval(this.countdown.bind(this), 1000);
     setTimeout(this.startEverything.bind(this), 3000);
@@ -51,6 +61,7 @@ export class Visualizer {
       y: ballTopY,
       onStart: () => {
         this.breathTextInhaleElement.classList.add(vars.clsActive);
+        this.playSound(this.inhaleTime);
       },
       onComplete: () => {
         this.removeBreathTextClasses();
@@ -62,6 +73,7 @@ export class Visualizer {
       y: ballTopY,
       onStart: () => {
         this.breathTextHold1Element.classList.add(vars.clsActive);
+        this.playSound(this.holdTime);
       },
       onComplete: () => {
         this.removeBreathTextClasses();
@@ -73,6 +85,7 @@ export class Visualizer {
       y: ballBottomY,
       onStart: () => {
         this.breathTextExhaleElement.classList.add(vars.clsActive);
+        this.playSound(this.exhaleTime);
       },
       onComplete: () => {
         this.removeBreathTextClasses();
@@ -84,6 +97,7 @@ export class Visualizer {
       y: ballBottomY,
       onStart: () => {
         this.breathTextHold2Element.classList.add(vars.clsActive);
+        this.playSound(this.hold2Time);
       },
       onComplete: () => {
         this.removeBreathTextClasses();
@@ -129,10 +143,19 @@ export class Visualizer {
     );
   }
 
+  playSound(duration) {
+    setTimeout(() => {
+      if (this.isActive) {
+        this.audio.play();
+      }
+    }, duration * 1000 - 500);
+  }
+
   startEverything() {
     this.startTime = new Date();
     this.timelineBlocks = new gsap.timeline({ repeat: -1 });
     this.timelineBall = new gsap.timeline({ repeat: -1 });
+    this.isActive = true;
 
     if (
       this.breathTextInhaleElement &&
@@ -148,8 +171,6 @@ export class Visualizer {
     }
   }
   countdown() {
-    console.log(this.startDelayRemaining);
-
     this.countdownElement.innerHTML = this.startDelayRemaining;
     this.startDelayRemaining -= 1;
 
@@ -175,5 +196,6 @@ export class Visualizer {
     clearInterval(this.timeInterval);
 
     this.removeBreathTextClasses();
+    this.isActive = false;
   }
 }

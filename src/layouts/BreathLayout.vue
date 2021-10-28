@@ -1,14 +1,14 @@
 <template lang="pug">
   .page
-    Header
+    HeaderBreath
     router-view
 </template>
 
 <script>
-import Header from '../components/app/Header.vue';
+import HeaderBreath from '../components/app/HeaderBreath.vue';
 
 export default {
-  name: 'header-layout',
+  name: 'breath-layout',
   data: () => {
     return {};
   },
@@ -16,7 +16,7 @@ export default {
   computed: {},
   watch: {},
   components: {
-    Header,
+    HeaderBreath,
   },
 };
 </script>

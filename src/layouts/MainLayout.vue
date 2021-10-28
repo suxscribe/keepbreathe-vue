@@ -1,9 +1,12 @@
 <template lang="pug">
   .page
+    HeaderMain
     router-view
 </template>
 
 <script>
+import HeaderMain from '../components/app/HeaderMain.vue';
+
 export default {
   name: 'main-layout',
   data: () => {
@@ -12,7 +15,9 @@ export default {
   async mounted() {},
   computed: {},
   watch: {},
-  components: {},
+  components: {
+    HeaderMain,
+  },
 };
 </script>
 

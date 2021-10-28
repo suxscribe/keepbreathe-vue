@@ -79,7 +79,6 @@ body {
 
 .main {
   flex: 1 1 auto;
-
 }
 
 ul {
@@ -108,4 +107,10 @@ a,
 input,
 button {
   -webkit-tap-highlight-color: transparent;
+}
+
+hr {
+  margin: $margin auto;
+  border: 1px solid rgba($color-gray, 0.2);
+  max-width: 200px;
 }

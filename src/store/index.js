@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     count: 0,
     selectedBreath: 0,
-    locale: 'ru-RU',
+    locale: 'en-US',
+    soundState: true,
   },
   getters: {
     getCount: (state) => {
@@ -17,6 +18,7 @@ export default new Vuex.Store({
       return state.selectedBreath;
     },
     locale: (state) => state.locale,
+    getSoundState: (state) => state.soundState,
   },
   mutations: {
     increment(state) {
@@ -24,6 +26,12 @@ export default new Vuex.Store({
     },
     setBreath(state, payload) {
       state.selectedBreath = payload;
+    },
+    setLocale(state, payload) {
+      state.locale = payload;
+    },
+    setSoundState(state, payload) {
+      state.soundState = payload;
     },
   },
   actions: {},

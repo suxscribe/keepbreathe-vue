@@ -1,3 +1,5 @@
+// localize interface
+
 import store from '../store';
 
 import ru from '../locales/ru.json';

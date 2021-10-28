@@ -1,7 +1,7 @@
 <template lang="pug">
   .header
-    .header__right
     .header__left
+    .header__right
       router-link(:to={path: "/"}, class='header__goback') {{ 'FinishText' | localize }}
 </template>
 

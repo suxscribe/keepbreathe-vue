@@ -8,13 +8,13 @@ const routes = [
     path: '/',
     name: 'home',
     meta: { layout: 'main' },
-    component: () => import('../components/Exercises.vue'),
+    component: () => import('../components/ExercisesList.vue'),
   },
   {
     path: '/breath',
     name: 'breath',
-    meta: { layout: 'header' },
-    component: () => import('../components/Breath.vue'),
+    meta: { layout: 'breath' },
+    component: () => import('../components/BreathPractice.vue'),
   },
 ];
 
@@ -24,9 +24,6 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // console.log(from);
-  // console.log(to);
-
   next();
 });
 
