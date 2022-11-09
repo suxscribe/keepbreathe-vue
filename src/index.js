@@ -2,7 +2,6 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import './js/';
-import { vars } from './js/vars';
 
 // SCSS
 import './scss/main.scss';
