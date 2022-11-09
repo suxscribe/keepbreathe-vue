@@ -30,6 +30,8 @@
 import { Visualizer } from '../js/visualizer';
 import { breathData } from '../js/breath-data';
 
+import NoSleep from 'nosleep.js';
+
 import BreathGraphContainer from './BreathGraphContainer.vue';
 
 // console.log(BreathContainer)
@@ -49,13 +51,19 @@ export default {
       return this.$store.getters.getBreath;
     },
     stopBreathVisuals() {
+      this.noSleep.disable(); // allow screen to sleep
+
       if (this.breathVisuals !== null) {
         this.breathVisuals.destroy();
         this.breathVisuals = null;
       }
     },
     startBreathVisuals() {
+      this.noSleep = new NoSleep();
+
       this.stopBreathVisuals();
+
+      this.noSleep.enable(); // prevent screen sleep while in practice
       this.breathVisuals = new Visualizer({
         breathPattern: this.breathDataLocal[this.getBreath()].breathPattern,
       });
