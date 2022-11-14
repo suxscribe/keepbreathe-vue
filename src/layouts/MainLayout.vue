@@ -2,10 +2,12 @@
   .page
     HeaderMain
     router-view
+    FooterMain
 </template>
 
 <script>
 import HeaderMain from '../components/app/HeaderMain.vue';
+import FooterMain from '../components/app/FooterMain.vue';
 
 export default {
   name: 'main-layout',
@@ -17,6 +19,7 @@ export default {
   watch: {},
   components: {
     HeaderMain,
+    FooterMain,
   },
 };
 </script>

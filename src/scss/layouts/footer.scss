@@ -1,2 +1,7 @@
 .footer {
+  padding: $block-padding;
+
+  &__version {
+    color: $color-gray;
+  }
 }

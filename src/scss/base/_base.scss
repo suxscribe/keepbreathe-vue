@@ -90,6 +90,7 @@ ul {
 .container {
   margin: 0 $container-margin;
   max-width: $container-width;
+  flex: 1 0 auto;
 
   & > section:last-child {
     margin-bottom: 0;
