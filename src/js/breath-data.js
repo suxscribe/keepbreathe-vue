@@ -114,16 +114,16 @@ export const breathData = [
     id: 7,
     breathPattern: [4, 0, 7, 0],
     'en-US': {
-      name: 'Bee Breathing',
+      name: 'Clear Mind',
       description: 'The buzzing bee breathing exercise is a powerful recharge.',
       tips:
         'Inhale deeply through your nose, then exhale slowly through the nose while making a humming noise with your throat. You’ll sound like a buzzing bee, hence the name.Do 5 cycles.',
     },
     'ru-RU': {
-      name: 'Дыхание пчелы',
+      name: 'Очистка головы',
       description: 'Простой и эффективный способ перезарядить мозги',
       tips:
-        'Вдыхайте воздух через нос. Затем медленно выдыхайте, также, носом, в то же время создайте гудение в горле.',
+        'Вдыхайте воздух через нос. Затем медленно выдыхайте, также, носом, создавая гудящий звук.',
     },
   },
 ];
