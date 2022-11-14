@@ -1,8 +1,8 @@
 <template lang="pug">
-  .page
-    HeaderMain
-    router-view
-    FooterMain
+.page
+  HeaderMain
+  router-view
+  FooterMain
 </template>
 
 <script>
