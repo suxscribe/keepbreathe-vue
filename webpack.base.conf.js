@@ -6,6 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
+var webpack = require('webpack');
+const packageJson = fs.readFileSync('./package.json');
+const version = JSON.parse(packageJson).version || 0;
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
 const PATHS = {
@@ -162,6 +165,11 @@ module.exports = {
       ],
     }),
     new SpriteLoaderPlugin({ plainSprite: true }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        PACKAGE_VERSION: '"' + version + '"',
+      },
+    }),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files

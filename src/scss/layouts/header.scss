@@ -1,10 +1,11 @@
 .header {
-  position: absolute;
+  // position: absolute;
   top: 0;
   width: 100%;
 
   display: flex;
   justify-content: space-between;
+  flex: 0 0 auto;
 
   &__right {
     flex: 0 0 auto;

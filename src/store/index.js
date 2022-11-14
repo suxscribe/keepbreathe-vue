@@ -9,6 +9,8 @@ export default new Vuex.Store({
     selectedBreath: 0,
     locale: 'en-US',
     soundState: true,
+    appVersion: '0.0.0',
+    packageVersion: process.env.PACKAGE_VERSION || '0',
   },
   getters: {
     getCount: (state) => {
@@ -19,6 +21,7 @@ export default new Vuex.Store({
     },
     locale: (state) => state.locale,
     getSoundState: (state) => state.soundState,
+    getAppVersion: (state) => state.packageVersion,
   },
   mutations: {
     increment(state) {
