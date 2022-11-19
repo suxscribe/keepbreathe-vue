@@ -1,11 +1,10 @@
 <template lang="pug">
   .container
-    include ../pug/utils/mixins.pug
-    .exercises__header
-      .exercises__header-logo
-        img(src='/assets/img/logo.svg')
-        
     .exercises 
+      include ../pug/utils/mixins.pug
+      .exercises__header
+        .exercises__header-logo
+          img(src='/assets/img/logo.svg')
       .exercises__list 
         .exercises__item(v-for="breath in breathDataLocal", :data-breath-id="breath.id" @click="selectBreath(breath.id)")
           .exercises__item-name {{ breath.id | localizeData('name') }}
