@@ -9,6 +9,7 @@ import BreathLayout from '../layouts/BreathLayout.vue';
 export default {
   created() {
     this.$store.dispatch('loadLocale');
+    this.$store.dispatch('loadSoundState');
   },
   computed: {
     layout() {

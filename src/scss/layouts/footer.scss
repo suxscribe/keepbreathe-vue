@@ -1,6 +1,9 @@
 .footer {
   flex: 0 0 auto;
   padding: $block-padding;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
   &__version {
     color: $color-gray;
