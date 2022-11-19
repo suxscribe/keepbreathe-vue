@@ -32,10 +32,11 @@ export default new Vuex.Store({
     },
     setLocale(state, payload) {
       state.locale = payload;
-      localStorage.setItem('locale', state.locale); // save locale to localStorage
+      localStorage.locale = state.locale; // save locale to localStorage
     },
     setSoundState(state, payload) {
       state.soundState = payload;
+      localStorage.soundState = state.soundState.toString();
     },
   },
   actions: {
@@ -43,14 +44,12 @@ export default new Vuex.Store({
       const locales = ['ru-RU', 'en-US']; // todo get this array from locales object keys from localize.filter.js
 
       const data = localStorage.locale;
+      commit('setLocale', locales.includes(data) ? data : locales[0]);
+    },
+    loadSoundState({ commit, dispatch }) {
+      console.log(localStorage.soundState);
 
-      if (data) {
-        if (locales.includes(data)) {
-          commit('setLocale', data);
-        } else {
-          commit('setLocale', locales[0]);
-        }
-      }
+      commit('setSoundState', localStorage.soundState === 'true');
     },
   },
 });

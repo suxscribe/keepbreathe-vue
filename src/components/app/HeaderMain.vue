@@ -45,7 +45,6 @@ export default {
       this.soundState = this.soundState ? false : true;
 
       this.$store.commit('setSoundState', this.soundState);
-      // todo get sound status from store and switch it
     },
   },
 };
