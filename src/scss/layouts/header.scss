@@ -11,9 +11,11 @@
     flex: 0 0 auto;
     padding: $block-padding;
     margin-top: responsive-value(-4px, -8px); // visual shift
+    display: flex;
+    gap: $margin-2;
 
     & > * {
-      margin-right: $margin-2;
+      // margin-right: $margin-2;
     }
   }
 
