@@ -7,9 +7,7 @@ import './js/';
 import './scss/main.scss';
 
 // Vue.js
-// window.Vue = require('vue');
 import Vue from 'vue';
-// import VModal from 'vue-js-modal';
 import store from './store/index';
 import router from './router/index';
 import VModal from 'vue-js-modal/dist/index.nocss.js';
