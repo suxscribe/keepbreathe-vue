@@ -39,9 +39,8 @@ export const breathData = [
       tips: '',
     },
     'ru-RU': {
-      name: 'Проснись',
-      description:
-        'Делай эту практику первым делом с утра, для того чтобы быстро зарядиться энергией и бодростью',
+      name: 'Проснуться',
+      description: 'Рекомендуется делать после пробуждения',
       tips: '',
     },
   },
@@ -57,7 +56,7 @@ export const breathData = [
     'ru-RU': {
       name: 'Глубокое спокойствие',
       description:
-        'Естественное успокоительное для нервной системы. Делай дважды в день',
+        'Естественное успокоительное для нервной системы. Рекомендуется делать дважды в день',
       tips: '',
     },
   },
@@ -89,7 +88,7 @@ export const breathData = [
     'ru-RU': {
       name: 'Уджайи',
       description:
-        'Ujjayi has a balancing influence on the entire cadiorespiratory system, releases feelings of irritation and frustration, and helps calm the mind and body',
+        'Дыхание уджайи обладает балансирующим действием на всю сердечно-легочную систему. Снимает раздражение и фрустрацию, помогает успокоить тело и разум',
       tips: '',
     },
   },
