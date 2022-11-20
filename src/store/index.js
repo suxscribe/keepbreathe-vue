@@ -43,12 +43,22 @@ export default new Vuex.Store({
     loadLocale({ commit, dispatch }) {
       const locales = ['ru-RU', 'en-US']; // todo get this array from locales object keys from localize.filter.js
 
-      const data = localStorage.locale;
-      commit('setLocale', locales.includes(data) ? data : locales[0]);
+      //if localstorage.locale -> use it. if no - get system language
+      const lsLocale = localStorage.locale;
+
+      if (lsLocale) {
+        commit('setLocale', locales.includes(lsLocale) ? lsLocale : locales[0]);
+      } else {
+        const language = window.navigator
+          ? window.navigator.language ||
+            window.navigator.systemLanguage ||
+            window.navigator.userLanguage
+          : locales[0];
+        console.log(language);
+        commit('setLocale', locales.includes(language) ? language : locales[0]);
+      }
     },
     loadSoundState({ commit, dispatch }) {
-      console.log(localStorage.soundState);
-
       commit('setSoundState', localStorage.soundState === 'true');
     },
   },
