@@ -10,12 +10,21 @@
   }
 
   &__pattern {
-    color: $color-gray;
+    color: var(--color-text-muted);
     margin-bottom: $margin;
     margin-top: responsive-value(-2px, -4px);
   }
+  &__how-long {
+    margin-bottom: $margin;
+  }
   &__description {
     margin-bottom: $margin-2;
+  }
+  &__how {
+    margin-bottom: $margin;
+  }
+  &__what {
+    margin-bottom: $margin;
   }
   &__tips {
     margin-bottom: $margin-2;

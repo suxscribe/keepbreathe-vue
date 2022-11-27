@@ -59,7 +59,7 @@
         }
       }
       &--hold1 {
-        color: $color-gray;
+        color: var(--color-text-muted);
         letter-spacing: $letter-spacing;
       }
       &--exhale {
@@ -73,7 +73,7 @@
         }
       }
       &--hold2 {
-        color: $color-gray;
+        color: var(--color-text-muted);
       }
     }
   }
@@ -100,6 +100,15 @@
         rgba(255, 255, 255, 0)
       );
 
+      @media (prefers-color-scheme: dark) {
+        background: linear-gradient(
+          to right,
+          var(--color-bg),
+          70%,
+          rgba(50, 50, 56, 0)
+        );
+      }
+
       width: 20vw;
 
       @media (min-width: $breakpoint-medium) {
@@ -110,6 +119,15 @@
           95%,
           rgba(255, 255, 255, 0)
         );
+
+        @media (prefers-color-scheme: dark) {
+          background: linear-gradient(
+            to right,
+            var(--color-bg),
+            95%,
+            rgba(50, 50, 56, 0)
+          );
+        }
       }
     }
   }
@@ -146,11 +164,11 @@
   &__timer {
     text-align: center;
     font-weight: $font-weight-bold;
-    color: $color-gray;
+    color: var(--color-text-muted);
   }
   &__counter {
     text-align: center;
-    color: $color-gray;
+    color: var(--color-text-muted);
   }
   &__countdown {
     position: absolute;
@@ -183,7 +201,7 @@
   width: var(--hold1-width);
 
   & svg path {
-    stroke: $color-gray;
+    stroke: var(--color-text-muted);
   }
 }
 .hold2 {
@@ -191,7 +209,7 @@
   width: var(--hold2-width);
 
   & svg path {
-    stroke: $color-gray;
+    stroke: var(--color-text-muted);
   }
 }
 .exhale {

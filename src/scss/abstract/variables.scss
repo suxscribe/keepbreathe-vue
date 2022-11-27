@@ -20,11 +20,33 @@ $color-gray: rgba(67, 64, 71, 0.4);
 $color-gray-2: #f7f7f9;
 // $color-gray-light: #93b6bb;
 
+//dark theme
+$color-dark-text: rgb(221, 217, 211);
+$color-dark-bg: rgb(50, 50, 56);
+$color-dark-text-muted: rgba(189, 184, 175, 0.4);
+
 :root {
+  --color-bg: #fff; //$color-white;
+  --color-bg-muted: #f7f7f9; // $color-gray-2
+  --color-text: #5b5761; //$color-black
+  --color-text-muted: rgba(67, 64, 71, 0.4); //$color-gray
+
+  --color-link: #5b5761; //$color-black;
+  --color-link-hover: #4ea2e2; // $color-inhale;
+
   --box-shadow: 0 10px 30px #{rgba($color-gray, 0.2)};
   --transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
-
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: rgb(50, 50, 56);
+    --color-bg-muted: rgb(69, 69, 75); // $color-gray-2
+    --color-text: rgb(221, 217, 211);
+    --color-text-muted: rgba(216, 211, 223, 0.4);
+    --color-link: rgb(221, 217, 211);
+    --color-link-hover: #4ea2e2;
+  }
+}
 // MEDIA SIZES AND BREAKPOINTS
 
 $breakpoint-small: 640px !default;
@@ -106,5 +128,5 @@ $ball-size: 26px;
   ballSize: $ball-size;
   colorInhale: $color-inhale;
   colorExhale: $color-exhale;
-  colorGray: $color-gray;
+  colorGray: var(--color-text-muted);
 }

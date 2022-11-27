@@ -6,6 +6,6 @@
   justify-content: center;
 
   &__version {
-    color: $color-gray;
+    color: var(--color-text-muted);
   }
 }

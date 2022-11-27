@@ -26,10 +26,10 @@
   }
 
   &__lang-switch {
-    color: $color-gray;
+    color: var(--color-text-muted);
   }
 
   &__goback {
-    color: $color-gray;
+    color: var(--color-text-muted);
   }
 }

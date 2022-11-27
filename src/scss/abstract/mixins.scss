@@ -151,6 +151,6 @@
 
 @mixin block-rounded {
   padding: $block-padding;
-  background: $color-gray-2;
+  background: var(--color-bg-muted);
   border-radius: $border-radius;
 }
