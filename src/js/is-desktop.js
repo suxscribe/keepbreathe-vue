@@ -1,5 +1,3 @@
-import { variables } from './variables';
-
 const getWidth = () => {
   return Math.max(
     document.body.scrollWidth,
@@ -10,8 +8,14 @@ const getWidth = () => {
   );
 };
 
-export const isDesktop = () => {
-  const width = getWidth();
+// export const isDesktop = () => {
+//   const width = getWidth();
 
-  if (width >= variables.breakpointWidthM) return true;
+//   if (width >= variables.breakpointWidthM) return true;
+// };
+
+export const setVh = () => {
+  let vh = window.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
