@@ -29,6 +29,7 @@
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@volar-plugins/vetur": "latest",
+    "@volar/vue-language-plugin-pug": "^1.0.12",
     "autoprefixer": "^10.3.7",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
