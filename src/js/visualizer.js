@@ -26,9 +26,10 @@ export class Visualizer {
     // audio
     this.audio = document.createElement('audio');
     this.audio.src = '/assets/sounds/chime.ogg';
+    this.isSound = _options.isSound; //todo pass sound state here
 
     // misc
-    this.isActive = false;
+    this.isActive = false; // if exercise active
     this.counter = 0;
     this.startTime = 0;
     this.elapsedTime = 0;
@@ -144,11 +145,13 @@ export class Visualizer {
   }
 
   playSound(duration) {
-    setTimeout(() => {
-      if (this.isActive) {
-        this.audio.play();
-      }
-    }, duration * 1000 - 500);
+    if (this.isSound) {
+      setTimeout(() => {
+        if (this.isActive) {
+          this.audio.play();
+        }
+      }, duration * 1000 - 500);
+    }
   }
 
   startEverything() {

@@ -66,6 +66,7 @@ export default {
       this.noSleep.enable(); // prevent screen sleep while in practice
       this.breathVisuals = new Visualizer({
         breathPattern: this.breathDataLocal[this.getBreath()].breathPattern,
+        isSound: false, //todo pass sound setting value
       });
     },
   },
