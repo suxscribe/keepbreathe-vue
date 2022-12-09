@@ -1,34 +1,34 @@
 <template lang="pug">
-  .container
-    .exercises 
-      include ../pug/utils/mixins.pug
-      .exercises__header
-        .exercises__header-logo
-          img(src='/assets/img/logo.svg')
-      .exercises__list 
-        .exercises__item(v-for="breath in breathDataLocal", :data-breath-id="breath.id" @click="selectBreath(breath.id)")
-          .exercises__item-name {{ breath.id | localizeData('name') }}
-          .exercises__item-pattern {{renderPattern(breath.breathPattern)}}
+.container
+  .exercises 
+    include ../pug/utils/mixins.pug
+    .exercises__header
+      .exercises__header-logo
+        img(src='/assets/img/logo.svg')
+    .exercises__list 
+      .exercises__item(v-for="breath in breathDataLocal", :data-breath-id="breath.id" @click="selectBreath(breath.id)")
+        .exercises__item-name {{ breath.id | localizeData('name') }}
+        .exercises__item-pattern {{renderPattern(breath.breathPattern)}}
 
-    modal(name='breath-modal', classes='modal__container', height='auto')
-      button.modal__close(@click='modalHide')
-        +svg({name: 'close'})
-      .exercise 
-        .exercise__name {{ selectedBreathId | localizeData('name') }}
-        .exercise__pattern {{renderPattern(breathDataLocal[selectedBreathId].breathPattern)}}
-        .exercise__how-long(v-if="renderDuration()", v-html="renderDuration()") 
-        .exercise__icons(v-if="renderBreathIcons()", v-html="renderBreathIcons()")
-        .exercise__description.exercise__what
-          .exercise__what-title.text__h3 {{ 'DescriptionHeader' | localize }}
-          .exercise__what-content(v-html="renderDescription()")
-        .exercise__how(v-if="renderHowTo()")
-          .exercise__how-title.text__h3 {{ 'HowToHeader' | localize }}
-          .exercise__how-content(v-html="renderHowTo()")
-        .exercise__tips(v-if="renderTips()")
-          .exercise__tips-title.text__h3 {{ 'TipsHeader' | localize }}
-          .exercise__tips-content(v-html="renderTips()")
-        .exercise__buttons
-          .button.button--primary(@click='goToBreathe') {{ 'StartButtonText' | localize }}
+  modal(name='breath-modal', classes='modal__container', height='auto')
+    button.modal__close(@click='modalHide')
+      +svg({name: 'close'})
+    .exercise
+      .exercise__name {{ selectedBreathId | localizeData('name') }}
+      .exercise__pattern {{renderPattern(breathDataLocal[selectedBreathId].breathPattern)}}
+      .exercise__how-long(v-if="renderDuration()", v-html="renderDuration()") 
+      .exercise__icons(v-if="renderBreathIcons()", v-html="renderBreathIcons()")
+      .exercise__description.exercise__what
+        .exercise__what-title.text__h3 {{ 'DescriptionHeader' | localize }}
+        .exercise__what-content(v-html="renderDescription()")
+      .exercise__how(v-if="renderHowTo()")
+        .exercise__how-title.text__h3 {{ 'HowToHeader' | localize }}
+        .exercise__how-content(v-html="renderHowTo()")
+      .exercise__tips(v-if="renderTips()")
+        .exercise__tips-title.text__h3 {{ 'TipsHeader' | localize }}
+        .exercise__tips-content(v-html="renderTips()")
+      .exercise__buttons
+        .button.button--primary(@click='goToBreathe') {{ 'StartButtonText' | localize }}
 </template>
 
 <script>
@@ -102,7 +102,6 @@ export default {
 
       if (icons) {
         icons.forEach((icon) => {
-          console.log(iconsHtml);
           if (icon === 'inhale-nose') {
             iconsHtml += `<svg class="icon__exhale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 285">
             <g id="Face_inhale" data-name="Face inhale">

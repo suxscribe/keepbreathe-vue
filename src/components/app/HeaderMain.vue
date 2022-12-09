@@ -1,8 +1,8 @@
 <template lang="pug">
-  header.header
-    .header__right
-      a.header__lang-switch(href="#",@click="switchLocale") {{ 'LocaleTitle' | localize }}
-      a.header__sound-switch(href="#",@click="switchSound") Sound {{ renderSoundSwitch() }}
+header.header
+  .header__right
+    a.header__lang-switch(href="#",@click="switchLocale") {{ 'LocaleTitle' | localize }}
+    a.header__sound-switch(href="#",@click="switchSound") Sound {{ renderSoundSwitch() }}
 </template>
 
 <script>
