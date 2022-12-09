@@ -2,6 +2,7 @@ export const breathData = [
   {
     id: 0,
     breathPattern: [7, 4, 8, 4],
+    icons: ['inhale-nose', 'exhale-nose'],
     'en-US': {
       name: 'Pranayama',
       description:
@@ -22,6 +23,7 @@ export const breathData = [
   {
     id: 1,
     breathPattern: [2, 0, 2, 0],
+    icons: ['inhale-nose', 'exhale-nose'],
     'en-US': {
       name: 'Wim Hof',
       description: 'Full functionality is WIP',
@@ -33,15 +35,16 @@ export const breathData = [
       name: 'Вим Хоф',
       description:
         'Бодрит и насыщает все тело кислородом. Полный функционал метода в разработке',
-      howto: '',
+      howto: 'Дышать глубоко, комфортно, тело расслаблено',
       duration: '5 — 7 минут',
       tips:
-        '30-40 глубоких вдохов и выдохов. Дышать комфортно, тело расслаблено. На последнем цикле на выдохе нужно задержать дыхание на максимальное время. Когда почувствуете необходимость вдохнуть - сделайте глубокий вдох и задержите дыхание на 10 секунд. Затем плавно выдохните. <br> Можно сделать 3-4 полных цикла упражнения.',
+        'Нужно сделать 30-40 глубоких вдохов и выдохов. На последнем цикле на выдохе нужно задержать дыхание на максимальное время. Когда почувствуете необходимость вдохнуть - сделайте глубокий вдох и задержите дыхание на 10 секунд. Затем плавно выдохните. <br> Можно сделать 3-4 полных цикла упражнения.',
     },
   },
   {
     id: 2,
     breathPattern: [6, 0, 2, 0],
+    icons: ['inhale-nose', 'exhale-nose'],
     'en-US': {
       name: 'Awake',
       description:
@@ -61,6 +64,7 @@ export const breathData = [
   {
     id: 3,
     breathPattern: [4, 7, 8, 0],
+    icons: ['inhale-nose', 'exhale-nose'],
     'en-US': {
       name: 'Deep Calm',
       description:
@@ -81,6 +85,7 @@ export const breathData = [
   {
     id: 4,
     breathPattern: [4, 4, 4, 4],
+    icons: ['inhale-nose', 'exhale-nose'],
     'en-US': {
       name: 'Square',
       description:
@@ -101,6 +106,7 @@ export const breathData = [
   {
     id: 5,
     breathPattern: [7, 0, 7, 0],
+    icons: ['inhale-nose', 'exhale-nose'],
     'en-US': {
       name: 'Ujjayi',
       description:
@@ -121,6 +127,7 @@ export const breathData = [
   {
     id: 6,
     breathPattern: [7, 0, 11, 0],
+    icons: ['inhale-nose', 'exhale-nose'],
     'en-US': {
       name: '7/11 Breathing',
       description:
@@ -142,6 +149,7 @@ export const breathData = [
   {
     id: 7,
     breathPattern: [4, 0, 7, 0],
+    icons: ['inhale-nose', 'exhale-nose'],
     'en-US': {
       name: 'Clear Mind',
       description: 'The buzzing bee breathing exercise is a powerful recharge.',

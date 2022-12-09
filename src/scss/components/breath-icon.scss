@@ -1,0 +1,30 @@
+.icon {
+  &__exhale {
+    flex: 0 0 auto;
+    width: 100px;
+    height: 100px;
+
+    background: $color-gray-2;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 10px;
+
+    &-path {
+      fill: none;
+      stroke: #e36966;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 11px;
+    }
+  }
+
+  &__inhale {
+    &-path {
+      fill: none;
+      stroke: #4ea2e2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 11px;
+    }
+  }
+}

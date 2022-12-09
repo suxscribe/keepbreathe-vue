@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 285">
+  <g id="Face_exhale_nose" data-name="Face exhale nose">
+    <path class="icon__exhale"
+      d="M102.3,14s12,24.86,8.08,51.7c7.42,17.18,18.75,29.81,42.86,55.64,7.32,11.26-15.64,19-20,22.24,1.73,5.17,3.38,13.42,9,17.72-1.29,7.75-6.38,11.12-10.26,15,4.31,6,6,9.47,6.46,13.34C134.8,192.52,123.39,203,123.39,203s18.51,59-40,40.47C64.2,238.91,58,261.94,55.8,270.55" />
+    <line class="icon__exhale" x1="36" y1="233.81" x2="80.75" y2="242.97" />
+    <line class="icon__exhale" x1="116.07" y1="182.01" x2="132" y2="176.27" />
+  </g>
+  <g id="Arrow_exhale_nose" data-name="Arrow exhale nose">
+    <path class="icon__exhale" d="M171.7,157.86s31.12,31.95,82.1,23.68" />
+    <path class="icon__exhale" d="M237.85,135.89l18.75,5.19c-47.33,20.65-85.4-2.59-85.4-2.59" />
+    <line class="icon__exhale" x1="240.97" y1="158.04" x2="256.6" y2="141.08" />
+    <polyline class="icon__exhale" points="237.28 173.27 253.8 181.54 236.09 194.47" />
+  </g>
+</svg>

@@ -9,7 +9,7 @@
     margin-bottom: $margin;
   }
 
-&__pattern {
+  &__pattern {
     color: var(--color-text-muted);
     margin-bottom: $margin;
     margin-top: responsive-value(-2px, -4px);
@@ -35,5 +35,23 @@
   }
   &__buttons {
     text-align: center;
+  }
+
+  &__icons {
+    margin-bottom: $margin;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+    & > img {
+      flex: 0 0 auto;
+      width: 100px;
+      height: 100px;
+
+      background: $color-gray-2;
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 10px;
+    }
   }
 }
