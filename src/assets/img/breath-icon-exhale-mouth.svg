@@ -1,0 +1,15 @@
+<svg class="icon__exhale" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 285">
+  <g id="Face_exhale_mouth" data-name="Face exhale mouth">
+    <line class="icon__exhale-path" x1="36" y1="231.74" x2="79.56" y2="245.47" />
+    <path class="icon__exhale-path"
+      d="M119.43,178.52s13.88-4.89,17.94-6.77c3.82-1.54,7.7-7.92,7.26-13.55-4.94-4.56-7.85-12.19-9.82-17.26,4.14-3.44,26.69-12.3,18.83-23.19-25.34-24.63-37.28-36.69-45.53-53.49C110.77,37.27,97.52,13,97.52,13" />
+    <path class="icon__exhale-path"
+      d="M119.43,178.52l20.19,10.58c2.22,2.06,2.82,5.35,2.85,9.25-3.47,2.1-16.36,11.72-16.36,11.72s12.33,60.57-44,36.12c-18.59-6.47-27.17,15.79-30.2,24.14" />
+  </g>
+  <g id="Arrow_exhale_mouth" data-name="Arrow exhale mouth">
+    <path class="icon__exhale-path" d="M165.92,195.24S197,227.19,248,218.92" />
+    <path class="icon__exhale-path" d="M232.07,173.27l18.76,5.19c-47.34,20.65-85.41-2.59-85.41-2.59" />
+    <line class="icon__exhale-path" x1="235.2" y1="195.43" x2="250.83" y2="178.46" />
+    <polyline class="icon__exhale-path" points="231.5 210.65 248.02 218.92 230.31 231.85" />
+  </g>
+</svg>
