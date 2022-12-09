@@ -26,7 +26,7 @@ $color-dark-bg: rgb(50, 50, 56);
 $color-dark-text-muted: rgba(189, 184, 175, 0.4);
 
 :root {
-  --color-bg: #fff; //$color-white;
+  --color-bg: 255, 255, 255; //$color-white;
   --color-bg-muted: #f7f7f9; // $color-gray-2
   --color-text: #5b5761; //$color-black
   --color-text-muted: rgba(67, 64, 71, 0.4); //$color-gray
@@ -39,7 +39,7 @@ $color-dark-text-muted: rgba(189, 184, 175, 0.4);
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: rgb(50, 50, 56);
+    --color-bg: 50, 50, 56;
     --color-bg-muted: rgb(69, 69, 75); // $color-gray-2
     --color-text: rgb(221, 217, 211);
     --color-text-muted: rgba(216, 211, 223, 0.4);

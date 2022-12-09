@@ -95,39 +95,22 @@
 
       background: linear-gradient(
         to right,
-        rgba(255, 255, 255, 1),
+        rgba(var(--color-bg), 1),
         70%,
-        rgba(255, 255, 255, 0)
+        rgba(var(--color-bg), 0)
       );
-
-      @media (prefers-color-scheme: dark) {
-        background: linear-gradient(
-          to right,
-          var(--color-bg),
-          70%,
-          rgba(50, 50, 56, 0)
-        );
-      }
 
       width: 20vw;
 
       @media (min-width: $breakpoint-medium) {
         width: 30vw;
+
         background: linear-gradient(
           to right,
-          rgba(255, 255, 255, 1),
+          rgba(var(--color-bg), 1),
           95%,
-          rgba(255, 255, 255, 0)
+          rgba(var(--color-bg), 0)
         );
-
-        @media (prefers-color-scheme: dark) {
-          background: linear-gradient(
-            to right,
-            var(--color-bg),
-            95%,
-            rgba(50, 50, 56, 0)
-          );
-        }
       }
     }
   }

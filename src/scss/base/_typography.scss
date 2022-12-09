@@ -2,7 +2,7 @@ body {
   font-family: $font-family;
   @include font-body;
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: rgba(var(--color-bg), 1);
 }
 
 a {

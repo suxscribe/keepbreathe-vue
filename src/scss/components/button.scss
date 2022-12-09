@@ -4,7 +4,7 @@
   border-radius: $button-border-radius;
   text-align: center;
   transition: all var(--transition);
-  background-color: var(--color-bg);
+  background-color: rgba(var(--color-bg), 1);
   cursor: pointer;
   line-height: $button-s-height;
   padding: 0 responsive-value(24px, 48px);
@@ -16,7 +16,7 @@
 
   &:hover {
     border-color: transparent;
-    background-color: var(--color-bg);
+    background-color: rgba(var(--color-bg), 1);
     color: $color-green;
   }
 
@@ -58,10 +58,10 @@
   }
 
   &--grey {
-    background-color: var(--color-bg-muted);
+    background-color: rgba(var(--color-bg-muted), 1);
 
     &:hover {
-      background-color: var(--color-bg-muted);
+      background-color: rgba(var(--color-bg-muted), 1);
     }
   }
 

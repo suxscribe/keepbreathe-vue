@@ -9,7 +9,7 @@
     margin-bottom: $margin;
   }
 
-  &__pattern {
+&__pattern {
     color: var(--color-text-muted);
     margin-bottom: $margin;
     margin-top: responsive-value(-2px, -4px);
