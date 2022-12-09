@@ -6,8 +6,13 @@ component(:is='layout')
 import MainLayout from '../layouts/MainLayout.vue';
 import BreathLayout from '../layouts/BreathLayout.vue';
 
+import { setVh } from '../js/is-desktop';
+
 export default {
   created() {
+    setVh();
+    window.addEventListener('resize', setVh);
+
     this.$store.dispatch('loadLocale');
     this.$store.dispatch('loadSoundState');
   },
