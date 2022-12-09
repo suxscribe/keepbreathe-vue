@@ -16,9 +16,15 @@
       .exercise 
         .exercise__name {{ selectedBreathId | localizeData('name') }}
         .exercise__pattern {{renderPattern(breathDataLocal[selectedBreathId].breathPattern)}}
-        .exercise__description(v-html="renderDescription()")
+        .exercise__how-long(v-if="renderDuration()", v-html="renderDuration()") 
+        .exercise__description.exercise__what
+          .exercise__what-title.text__h3 {{ 'DescriptionHeader' | localize }}
+          .exercise__what-content(v-html="renderDescription()")
+        .exercise__how(v-if="renderHowTo()")
+          .exercise__how-title.text__h3 {{ 'HowToHeader' | localize }}
+          .exercise__how-content(v-html="renderHowTo()")
         .exercise__tips(v-if="renderTips()")
-          .exercise__tips-title {{ 'TipsHeader' | localize }}
+          .exercise__tips-title.text__h3 {{ 'TipsHeader' | localize }}
           .exercise__tips-content(v-html="renderTips()")
         .exercise__buttons
           .button.button--primary(@click='goToBreathe') {{ 'StartButtonText' | localize }}
@@ -81,6 +87,12 @@ export default {
     },
     renderTips() {
       return localizeData(this.selectedBreathId, 'tips');
+    },
+    renderHowTo() {
+      return localizeData(this.selectedBreathId, 'howto');
+    },
+    renderDuration() {
+      return '⏱️&nbsp;&nbsp;' + localizeData(this.selectedBreathId, 'duration');
     },
     goToBreathe() {
       this.$router.push('/breath');
