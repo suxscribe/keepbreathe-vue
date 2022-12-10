@@ -100,57 +100,14 @@ export default {
       const icons = this.breathDataLocal[this.selectedBreathId].icons;
       let iconsHtml = '';
 
-      if (icons) {
+      if (Array.isArray(icons)) {
         icons.forEach((icon) => {
-          if (icon === 'inhale-nose') {
-            iconsHtml += `<svg class="icon__exhale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 285">
-            <g id="Face_inhale" data-name="Face inhale">
-              <path class="icon__inhale-path"
-                d="M102.3,13.39s12,24.86,8.08,51.69c7.42,17.19,18.75,29.81,42.86,55.64,7.32,11.27-15.64,19-20,22.25,1.73,5.16,3.38,13.41,9,17.72-1.29,7.75-6.38,11.12-10.26,15,4.31,6,6,9.48,6.46,13.35-3.66,2.91-15.07,13.35-15.07,13.35s18.51,59-40,40.46C64.2,238.32,58,261.35,55.8,270" />
-              <line class="icon__inhale-path" x1="36" y1="233.23" x2="80.75" y2="242.38" />
-              <line class="icon__inhale-path" x1="116.07" y1="181.42" x2="132" y2="175.68" />
-            </g>
-            <g id="Arrow_inhale_nose" data-name="Arrow inhale nose">
-              <path class="icon__inhale-path" d="M240.58,183.4S197,192.91,159,157.9" />
-              <path class="icon__inhale-path" d="M194.05,134.31l-18.76,5.19c47.34,20.65,85.41-2.59,85.41-2.59" />
-              <line class="icon__inhale-path" x1="190.93" y1="156.47" x2="175.29" y2="139.5" />
-              <polyline class="icon__inhale-path" points="177.37 160.11 159.03 157.9 166.67 178.46" />
-            </g>
+          iconsHtml += `<svg class="breath-icon breath-icon--${icon}">
+            <use xlink:href="#breath-icon-${icon}"></use>
           </svg>`;
-          } else if (icon === 'exhale-nose') {
-            iconsHtml += `<svg class="icon__exhale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 285">
-            <g id="Face_exhale_nose" data-name="Face exhale nose">
-              <path class="icon__exhale-path"
-                d="M102.3,14s12,24.86,8.08,51.7c7.42,17.18,18.75,29.81,42.86,55.64,7.32,11.26-15.64,19-20,22.24,1.73,5.17,3.38,13.42,9,17.72-1.29,7.75-6.38,11.12-10.26,15,4.31,6,6,9.47,6.46,13.34C134.8,192.52,123.39,203,123.39,203s18.51,59-40,40.47C64.2,238.91,58,261.94,55.8,270.55" />
-              <line class="icon__exhale-path" x1="36" y1="233.81" x2="80.75" y2="242.97" />
-              <line class="icon__exhale-path" x1="116.07" y1="182.01" x2="132" y2="176.27" />
-            </g>
-            <g id="Arrow_exhale_nose" data-name="Arrow exhale nose">
-              <path class="icon__exhale-path" d="M171.7,157.86s31.12,31.95,82.1,23.68" />
-              <path class="icon__exhale-path" d="M237.85,135.89l18.75,5.19c-47.33,20.65-85.4-2.59-85.4-2.59" />
-              <line class="icon__exhale-path" x1="240.97" y1="158.04" x2="256.6" y2="141.08" />
-              <polyline class="icon__exhale-path" points="237.28 173.27 253.8 181.54 236.09 194.47" />
-            </g>
-          </svg>`;
-          } else if (icon === 'exhale-mouth') {
-            iconsHtml += `<svg class="icon__exhale" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 285">
-            <g id="Face_exhale_mouth" data-name="Face exhale mouth">
-              <line class="icon__exhale-path" x1="36" y1="231.74" x2="79.56" y2="245.47" />
-              <path class="icon__exhale-path"
-                d="M119.43,178.52s13.88-4.89,17.94-6.77c3.82-1.54,7.7-7.92,7.26-13.55-4.94-4.56-7.85-12.19-9.82-17.26,4.14-3.44,26.69-12.3,18.83-23.19-25.34-24.63-37.28-36.69-45.53-53.49C110.77,37.27,97.52,13,97.52,13" />
-              <path class="icon__exhale-path"
-                d="M119.43,178.52l20.19,10.58c2.22,2.06,2.82,5.35,2.85,9.25-3.47,2.1-16.36,11.72-16.36,11.72s12.33,60.57-44,36.12c-18.59-6.47-27.17,15.79-30.2,24.14" />
-            </g>
-            <g id="Arrow_exhale_mouth" data-name="Arrow exhale mouth">
-              <path class="icon__exhale-path" d="M165.92,195.24S197,227.19,248,218.92" />
-              <path class="icon__exhale-path" d="M232.07,173.27l18.76,5.19c-47.34,20.65-85.41-2.59-85.41-2.59" />
-              <line class="icon__exhale-path" x1="235.2" y1="195.43" x2="250.83" y2="178.46" />
-              <polyline class="icon__exhale-path" points="231.5 210.65 248.02 218.92 230.31 231.85" />
-            </g>
-          </svg>`;
-          }
         });
       }
+
       return iconsHtml;
     },
 
