@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import HeaderMain from '../components/app/HeaderMain.vue';
-import FooterMain from '../components/app/FooterMain.vue';
+import HeaderMain from './parts/HeaderMain.vue';
+import FooterMain from './parts/FooterMain.vue';
 
 export default {
   name: 'main-layout',

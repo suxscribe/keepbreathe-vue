@@ -1,11 +1,11 @@
 <template lang="pug">
-  .page
-    HeaderBreath
-    router-view
+.page
+  HeaderBreath
+  router-view
 </template>
 
 <script>
-import HeaderBreath from '../components/app/HeaderBreath.vue';
+import HeaderBreath from './parts/HeaderBreath.vue';
 
 export default {
   name: 'breath-layout',
