@@ -18,13 +18,12 @@ export default {
   },
   computed: {
     layout() {
-      console.log(this.$route);
-      console.log(this.$route.meta);
-      console.log(this.$route.meta.layout);
-      return this.$route.meta.layout + '-layout';
+      //   console.log(this.$route.meta.layout);
+      return this.$route.meta.layout
+        ? this.$route.meta.layout + '-layout'
+        : 'main-layout'; //set default router value if router is not ready
     },
   },
-  async mounted() {},
   components: {
     MainLayout,
     BreathLayout,
