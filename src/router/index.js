@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'main',
     meta: { layout: 'main' },
     component: () => import('../components/ExercisesList.vue'),
   },
@@ -15,6 +15,12 @@ const routes = [
     name: 'breath',
     meta: { layout: 'breath' },
     component: () => import('../components/BreathPractice.vue'),
+  },
+  {
+    path: '*',
+    name: 'not-found',
+    meta: { layout: 'main' },
+    component: () => import('../components/NotFound.vue'),
   },
 ];
 
