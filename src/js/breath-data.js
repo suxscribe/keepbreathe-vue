@@ -7,15 +7,15 @@ export const breathData = [
       name: 'Pranayama',
       description:
         'Pranayama is the formal practice of controlling the breath, which is the source of our prana, or vital life force',
-      howto: '',
+      howto: 'Breath gently, using the least effort',
       duration: '5 — 7 minutes',
       tips: '',
     },
     'ru-RU': {
       name: 'Пранаяма',
       description:
-        'Пранаяма — практика контроля дыхания, которое рассматривается как источник праны, или жизненной силы',
-      howto: '',
+        'Пранаяма — дыхательные упражнения, воздействующие на физиологическую составляющую человека, посредством изменения концентрации кислорода и углекислого газа, а также на эмоциональную составляющую',
+      howto: 'Дышите спокойно и ритмично, без излишних усилий',
       duration: '5 — 7 минут',
       tips: '',
     },
@@ -27,15 +27,17 @@ export const breathData = [
     'en-US': {
       name: 'Wim Hof',
       description: 'Full functionality is WIP',
-      howto: '',
+      howto:
+        'Breathe deeply, but without much effort. Sit in a comfortable position',
       duration: '5 — 7 minutes',
-      tips: '',
+      tips:
+        'One round is 30-40 deep breaths. During the last breath cycle, after exhale hold your breath for as much as you can. Inhale when you feel need to. Make a deep inhale and hold it for 10 seconds. Then exhale slowly. <br> Do 3-4 rounds.',
     },
     'ru-RU': {
       name: 'Вим Хоф',
       description:
         'Бодрит и насыщает все тело кислородом. Полный функционал метода в разработке',
-      howto: 'Дышать глубоко, комфортно, тело расслаблено',
+      howto: 'Дышите глубоко, комфортно, тело расслаблено',
       duration: '5 — 7 минут',
       tips:
         'Нужно сделать 30-40 глубоких вдохов и выдохов. На последнем цикле на выдохе нужно задержать дыхание на максимальное время. Когда почувствуете необходимость вдохнуть - сделайте глубокий вдох и задержите дыхание на 10 секунд. Затем плавно выдохните. <br> Можно сделать 3-4 полных цикла упражнения.',
@@ -44,19 +46,22 @@ export const breathData = [
   {
     id: 2,
     breathPattern: [6, 0, 2, 0],
-    icons: ['inhale-nose', 'exhale-nose'],
+    icons: ['inhale-nose', 'exhale-mouth'],
     'en-US': {
       name: 'Awake',
       description:
-        'Use this technique first thing in the morning for quick burst of energy and alertness',
-      howto: '',
+        'This technique increases amount of oxygen in the body. So use it first thing in the morning for quick burst of energy and alertness',
+      howto:
+        'Sit up straight. Inhale slowly into your lower abdomen, then exhale quickly throught your mouth',
       duration: '5 — 7 minutes',
       tips: '',
     },
     'ru-RU': {
-      name: 'Проснуться',
-      description: 'Рекомендуется делать после пробуждения',
-      howto: '',
+      name: 'Бодрящее',
+      description:
+        'Эта техника насыщает тело кислородом. Поэтому отлично подходит для того чтобы быстро взбодриться и зарядиться энергией с утра',
+      howto:
+        'Сядьте прямо. Медленно вдохните в низ живота, затем быстро выдохните через рот',
       duration: '5 — 7 минут',
       tips: '',
     },
