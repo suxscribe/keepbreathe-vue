@@ -41,6 +41,5 @@ const app = new Vue({
 // some svg magic. SVG to shadow root
 function requireAll(r) {
   r.keys().forEach(r);
-  console.log(r);
 }
 requireAll(require.context('/src/svg/', true, /\.svg$/));
