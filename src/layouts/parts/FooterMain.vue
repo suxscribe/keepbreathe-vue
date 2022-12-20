@@ -1,6 +1,6 @@
 <template lang="pug">
 footer.footer 
-  .footer__version {{$store.getters.getAppVersion}}
+  .footer__version {{appVersion}}
 </template>
 
 <script>
