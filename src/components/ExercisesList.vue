@@ -57,8 +57,6 @@ export default {
     },
     selectBreath(id) {
       this.selectedBreathId = id;
-      // console.log(this.selectedBreathId);
-      this.stopBreathVisuals();
       this.setBreath();
       this.modalShow();
     },
@@ -69,19 +67,6 @@ export default {
     setBreath() {
       // set breath id to store
       this.$store.commit('setBreath', this.selectedBreathId);
-    },
-    stopBreathVisuals() {
-      if (this.breathVisuals !== null) {
-        this.breathVisuals.destroy();
-        this.breathVisuals = null;
-        console.log(this.breathVisuals);
-      }
-    },
-    startBreathVisuals() {
-      this.stopBreathVisuals();
-      this.breathVisuals = new Visualizer({
-        breathPattern: this.breathDataLocal[this.getBreath()].breathPattern,
-      });
     },
     renderDescription() {
       return localizeData(this.selectedBreathId, 'description');
