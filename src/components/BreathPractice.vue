@@ -23,14 +23,13 @@
   .breath__counter 
     | {{ 'CycleLabel' | localize }} 
     span.breath__counter-count 0
-  
 </template>
 
 <script>
 import { Visualizer } from '../js/visualizer';
 import { breathData } from '../js/breath-data';
 
-import NoSleep from 'nosleep.js';
+import NoSleep from '@uriopass/nosleep.js';
 
 import BreathGraphContainer from './BreathGraphContainer.vue';
 
@@ -41,11 +40,13 @@ export default {
     return {
       breathDataLocal: breathData,
       breathVisuals: null,
+      noSleep: new NoSleep(),
     };
   },
   mounted() {
     this.startBreathVisuals();
   },
+  computed: {},
   methods: {
     getBreath() {
       return this.$store.getters.getBreath;
@@ -62,11 +63,13 @@ export default {
       }
     },
     startBreathVisuals() {
-      this.noSleep = new NoSleep();
-
-      this.stopBreathVisuals();
+      // this.stopBreathVisuals();
 
       this.noSleep.enable(); // prevent screen sleep while in practice
+      // ! nosleep.js should have fix for Opera on Android:
+      // window.navigator.userAgent.indexOf("Samsung" && "OPR") === -1;
+      // https://github.com/Uriopass/NoSleep.js/pull/2
+
       this.breathVisuals = new Visualizer({
         breathPattern: this.breathDataLocal[this.getBreath()].breathPattern,
         isSound: this.getSoundState(),
