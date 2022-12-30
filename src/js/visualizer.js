@@ -49,7 +49,7 @@ export class Visualizer {
     // start
     this.countdown();
     this.countdownTimer = setInterval(this.countdown.bind(this), 1000);
-    setTimeout(this.startEverything.bind(this), 3000);
+    this.startTimeout = setTimeout(this.startEverything.bind(this), 3000);
   }
 
   setBallAnimation() {
@@ -185,8 +185,8 @@ export class Visualizer {
   }
 
   destroy() {
-    this.timelineBall.kill();
-    this.timelineBlocks.kill();
+    this.timelineBall?.kill();
+    this.timelineBlocks?.kill();
     this.timelineBall = null;
     this.timelineBlocks = null;
 
@@ -197,6 +197,7 @@ export class Visualizer {
     this.ballElement.style = '';
 
     clearInterval(this.timeInterval);
+    clearTimeout(this.startTimeout);
 
     this.removeBreathTextClasses();
     this.isActive = false;
