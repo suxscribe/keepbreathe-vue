@@ -3,6 +3,7 @@ header.header
   .header__right
     a.header__lang-switch(href="#",@click="switchLocale") {{ 'LocaleTitle' | localize }}
     a.header__sound-switch(href="#",@click="switchSound") Sound {{ renderSoundSwitch() }}
+    a.header__haptic-switch(href="#",@click="switchHaptic") Vibrate {{ renderHapticSwitch() }}
 </template>
 
 <script>
@@ -11,11 +12,13 @@ export default {
     return {
       locale: null,
       soundState: true,
+      hapticState: false,
     };
   },
   mounted() {
     this.locale = this.getLocale();
     this.soundState = this.getSoundState();
+    this.hapticState = this.getHapticState();
   },
   methods: {
     getLocale() {
@@ -24,12 +27,14 @@ export default {
     getSoundState() {
       return this.$store.getters.getSoundState;
     },
+    getHapticState() {
+      return this.$store.getters.getHapticState;
+    },
     renderSoundSwitch() {
-      if (this.soundState) {
-        return 'ON';
-      } else {
-        return 'OFF';
-      }
+      return this.soundState ? 'ON' : 'OFF';
+    },
+    renderHapticSwitch() {
+      return this.hapticState ? 'ON' : 'OFF';
     },
 
     switchLocale(e) {
@@ -40,11 +45,12 @@ export default {
     },
     switchSound(e) {
       e.preventDefault();
-      console.log(this.soundState);
-
       this.soundState = this.soundState ? false : true;
-
       this.$store.commit('setSoundState', this.soundState);
+    },
+    switchHaptic(e) {
+      this.hapticState = this.hapticState ? false : true;
+      this.$store.commit('setHapticState', this.hapticState);
     },
   },
 };

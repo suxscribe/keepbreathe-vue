@@ -26,7 +26,8 @@ export class Visualizer {
     // audio
     this.audio = document.createElement('audio');
     this.audio.src = '/assets/sounds/chime.ogg';
-    this.isSound = _options.isSound; //todo pass sound state here
+    this.isSound = _options.isSound;
+    this.isVibro = _options.isHaptic; // todo pass vibro setting here
 
     // misc
     this.isActive = false; // if exercise active
@@ -150,7 +151,10 @@ export class Visualizer {
         if (this.isActive) {
           this.audio.play();
         }
-      }, duration * 1000 - 500);
+      }, duration * 1000 - 500); // play audio at the end of current breath part minus delay to position the beep properly
+    }
+    if (this.isVibro) {
+      navigator.vibrate([100]);
     }
   }
 

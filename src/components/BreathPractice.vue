@@ -54,6 +54,9 @@ export default {
     getSoundState() {
       return this.$store.getters.getSoundState;
     },
+    getHapticState() {
+      return this.$store.getters.getHapticState;
+    },
     stopBreathVisuals() {
       this.noSleep.disable(); // allow screen to sleep
 
@@ -73,6 +76,7 @@ export default {
       this.breathVisuals = new Visualizer({
         breathPattern: this.breathDataLocal[this.getBreath()].breathPattern,
         isSound: this.getSoundState(),
+        isHaptic: this.getHapticState(),
       });
     },
   },

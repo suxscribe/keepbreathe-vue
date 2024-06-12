@@ -15,6 +15,7 @@ export default {
 
     this.$store.dispatch('loadLocale');
     this.$store.dispatch('loadSoundState');
+    this.$store.dispatch('loadHapticState');
   },
   computed: {
     layout() {

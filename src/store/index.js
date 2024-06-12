@@ -9,6 +9,7 @@ export default new Vuex.Store({
     selectedBreath: 0,
     locale: '', // 'en-US',
     soundState: true,
+    hapticState: true,
     appVersion: '0.0.0',
     packageVersion: process.env.PACKAGE_VERSION || '0',
   },
@@ -21,6 +22,7 @@ export default new Vuex.Store({
     },
     locale: (state) => state.locale,
     getSoundState: (state) => state.soundState,
+    getHapticState: (state) => state.hapticState,
     getAppVersion: (state) => state.packageVersion,
   },
   mutations: {
@@ -37,6 +39,10 @@ export default new Vuex.Store({
     setSoundState(state, payload) {
       state.soundState = payload;
       localStorage.soundState = state.soundState.toString();
+    },
+    setHapticState(state, payload) {
+      state.hapticState = payload;
+      localStorage.hapticState = state.hapticState.toString();
     },
   },
   actions: {
@@ -60,6 +66,9 @@ export default new Vuex.Store({
     },
     loadSoundState({ commit, dispatch }) {
       commit('setSoundState', localStorage.soundState === 'true');
+    },
+    loadHapticState({ commit, dispatch }) {
+      commit('setHapticState', localStorage.hapticState === 'true');
     },
   },
 });
